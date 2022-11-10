@@ -32,7 +32,7 @@
     <script src="myNavbar.js"></script>
     <script src="getData.js"></script>
     <script>
-        getData(`http://localhost:5000/books`,renderOptions)
+        getData(`/books`,renderOptions)
 
         function renderOptions(data){
             document.querySelector('select').innerHTML=`<option value="0">válassz könyvet...</option>`
@@ -45,7 +45,7 @@
             const id=obj.value;
             console.log('tőrlendő:',id)
             if(id!='0'){
-                getData(`http://localhost:5000/books/id/${id}`,renderForm)
+                getData(`/books/id/${id}`,renderForm)
             }
         }
         
@@ -63,10 +63,10 @@ async function del(){
     const config={
             method: 'DELETE',
         }
-    const response=await fetch(`http://localhost:5000/del/${id}`,config)
+    const response=await fetch(`/del/${id}`,config)
     const data=await response.json()
     console.log(data)
-    getData(`http://localhost:5000/books`,renderOptions)
+    getData(`/books`,renderOptions)
 }
 
     </script>

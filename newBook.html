@@ -58,7 +58,7 @@
             },
             body:JSON.stringify(formData)
         }
-        const response=await fetch(`http://localhost:5000/insertbook`,config)
+        const response=await fetch(`/insertbook`,config)
         const data=await response.json()
         console.log("hol az adat:",data)
     }

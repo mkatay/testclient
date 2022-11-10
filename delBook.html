@@ -33,7 +33,7 @@
     <script src="myNavbar.js"></script>
     <script src="getData.js"></script>
     <script>
-        getData(`http://localhost:5000/books`,renderOptions)
+        getData(`/books`,renderOptions)
 
         function renderOptions(data){
             document.querySelector('select').innerHTML=' <option value="0">válassz könyvet...</option>'
@@ -47,7 +47,7 @@
             console.log(id)
           
             if(id!='0'){
-                getData(`http://localhost:5000/books/id/${id}`,renderData)
+                getData(`/books/id/${id}`,renderData)
             }
         }
         
@@ -67,10 +67,10 @@
             const config={
                 method: 'DELETE'
             }
-            const response =await fetch(`http://localhost:5000/del/${id}`,config)
+            const response =await fetch(`/del/${id}`,config)
             const data=await response.json()
             console.log(data)
-            getData(`http://localhost:5000/books`,renderOptions)
+            getData(`/books`,renderOptions)
 
         }
 

@@ -29,7 +29,7 @@
     <script src="menu.js"></script>
     <script src="getData.js"></script>
     <script>
-        getData('http://localhost:5000/books',renderTbl)
+        getData('/books',renderTbl)
 
         function renderTbl(data) {
             document.querySelector('tbody').innerHTML=data.map(obj=>`

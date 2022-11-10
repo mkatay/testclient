@@ -36,7 +36,7 @@
     <script src="myNavbar.js"></script>
     <script src="getData.js"></script>
     <script>
-        getData(`http://localhost:5000/categ`,renderOptions)
+        getData(`/categ`,renderOptions)
 
         function renderOptions(data){
             document.querySelector('select').innerHTML=data.map(obj=>`
@@ -47,7 +47,7 @@
         function show(obj){
             const ctg=obj.value;
             if(ctg!='0'){
-                getData(`http://localhost:5000/books/${ctg}`,renderTbl)
+                getData(`/books/${ctg}`,renderTbl)
             }
         }
         

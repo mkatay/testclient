@@ -46,7 +46,7 @@
     <script src="myNavbar.js"></script>
     <script src="getData.js"></script>
     <script>
-        getData(`http://localhost:5000/books`,renderOptions)
+        getData(`/books`,renderOptions)
 
         function renderOptions(data){
             document.querySelector('select').innerHTML+=data.map(obj=>`
@@ -57,7 +57,7 @@
         function show(obj){
             const id=obj.value;
             if(id!='0'){
-                getData(`http://localhost:5000/books/id/${id}`,renderForm)
+                getData(`/books/id/${id}`,renderForm)
             }
         }
         
@@ -87,7 +87,7 @@ async function update(){
         },
         body:JSON.stringify(formData)
     }
-    const response=await fetch(`http://localhost:5000/book`,config)
+    const response=await fetch(`/book`,config)
     const data=await response.json()
     console.log(data)
 }
